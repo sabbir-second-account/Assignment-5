@@ -1,4 +1,4 @@
-import React, { use, useState } from "react";
+import  { use, useState } from "react";
 import type { ITechnology } from "../../Type/types";
 import AvailableTechnology from "./AvailableTechnology";
 import { MdDelete } from "react-icons/md";
@@ -28,7 +28,7 @@ const Technology = ({ technologyPromise }: TechnologyProps) => {
 
   /////// Remove from the Stack
 
-  const removeFromStack = (id: number) => {
+  const removeFromStack = (id:any) => {
     setStack((previous) => previous.filter((tech) => tech.id !== id));
   };
 
