@@ -8,13 +8,18 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "./Components/Footer";
 
-const technologyPromise = async (): Promise<ITechnology[]> => {
-  const res = await fetch("/public/data.json");
+const fetchTechnology = async (): Promise<ITechnology[]> => {
+  const res = await fetch("/data.json");
 
   const data = await res.json();
 
   return data;
 };
+
+
+const technologyPromise = fetchTechnology()
+
+
 
 function App() {
   return (
@@ -25,7 +30,7 @@ function App() {
       <Suspense
         fallback={<p className="text-center text-gray-500 py-4">What's up? </p>}
       >
-        <Technology technologyPromise={technologyPromise()} />
+        <Technology technologyPromise={technologyPromise } />
       </Suspense>
       <ToastContainer />
     </>
