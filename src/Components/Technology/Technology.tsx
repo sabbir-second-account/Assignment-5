@@ -28,7 +28,7 @@ const Technology = ({ technologyPromise }: TechnologyProps) => {
 
   /////// Remove from the Stack
 
-  const removeFromStack = (id:any) => {
+  const removeFromStack = (id:number) => {
     setStack((previous) => previous.filter((tech) => tech.id !== id));
   };
 
