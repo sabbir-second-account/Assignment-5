@@ -4,9 +4,11 @@ import { FaStar } from "react-icons/fa";
 const TechnologyCard = ({
   tech,
   onAdd,
+  isAdded,
 }: {
   tech: ITechnology;
   onAdd: (tech: ITechnology) => void;
+  isAdded: boolean;
 }) => {
   return (
     <div
@@ -41,7 +43,7 @@ const TechnologyCard = ({
             {tech.category}
           </span>
           <span className="bg-slate-100 px-2 py-1 rounded-md font-medium whitespace-nowrap text-[11px]">
-            {tech.level}
+            {tech.difficulty}
           </span>
           <div className="ml-auto flex items-center gap-1 font-semibold text-slate-700 shrink-0">
             <span className="text-amber-400">
@@ -51,12 +53,20 @@ const TechnologyCard = ({
           </div>
         </div>
 
+        
         <button
           onClick={() => onAdd(tech)}
-          className="w-full bg-[#0F172A] hover:bg-slate-800 text-white font-medium py-3 rounded-xl transition-colors"
+          disabled={isAdded}
+          className={`w-full font-medium py-3 rounded-xl transition-colors ${
+            isAdded
+              ? "bg-slate-300 text-slate-500 cursor-not-allowed"
+              : "bg-[#0F172A] hover:bg-slate-800 text-white"
+          }`}
         >
-          Add to Stack
+          {isAdded ? "Added to Stack" : "Add to Stack"}
         </button>
+        
+        
       </div>
     </div>
   );

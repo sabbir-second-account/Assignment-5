@@ -6,7 +6,7 @@
     "img": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
     "badge": "Popular",
     "category": "Frontend",
-    "level": "Beginner-Friendly",
+    "difficulty": "Beginner-Friendly",
     "rating": 4.9
   },
   {
@@ -16,7 +16,7 @@
     "img": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg",
     "badge": "Versatile",
     "category": "Frontend",
-    "level": "Beginner-Friendly",
+    "difficulty": "Beginner-Friendly",
     "rating": 4.8
   },
   {
@@ -26,7 +26,7 @@
     "img": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/svelte/svelte-original.svg",
     "badge": "Fast",
     "category": "Frontend",
-    "level": "Intermediate",
+    "difficulty": "Intermediate",
     "rating": 4.8
   },
   {
@@ -36,7 +36,7 @@
     "img": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
     "badge": null,
     "category": "Frontend",
-    "level": "Intermediate",
+    "difficulty": "Intermediate",
     "rating": 4.9
   },
   {
@@ -46,7 +46,7 @@
     "img": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
     "badge": "Standard",
     "category": "Backend",
-    "level": "Intermediate",
+    "difficulty": "Intermediate",
     "rating": 4.8
   },
   {
@@ -56,7 +56,7 @@
     "img": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
     "badge": "Top SQL",
     "category": "Database",
-    "level": "Intermediate",
+    "difficulty": "Intermediate",
     "rating": 4.9
   },
   {
@@ -66,7 +66,7 @@
     "img": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg",
     "badge": "Cache",
     "category": "Database",
-    "level": "Intermediate",
+    "difficulty": "Intermediate",
     "rating": 4.8
   },
   {
@@ -76,7 +76,7 @@
     "img": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
     "badge": "Ubiquitous",
     "category": "Language",
-    "level": "Beginner-Friendly",
+    "difficulty": "Beginner-Friendly",
     "rating": 4.9
   },
   {
@@ -86,7 +86,7 @@
     "img": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
     "badge": "Essential",
     "category": "Language",
-    "level": "Intermediate",
+    "difficulty": "Intermediate",
     "rating": 4.9
   },
   {
@@ -96,7 +96,7 @@
     "img": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
     "badge": "Robust",
     "category": "Language",
-    "level": "Intermediate",
+    "difficulty": "Intermediate",
     "rating": 4.6
   },
   {
@@ -106,7 +106,7 @@
     "img": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
     "badge": "Modern",
     "category": "Styling",
-    "level": "Beginner-Friendly",
+    "difficulty": "Beginner-Friendly",
     "rating": 4.9
   },
   {
@@ -116,7 +116,7 @@
     "img": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
     "badge": "Containers",
     "category": "DevOps",
-    "level": "Intermediate",
+    "difficulty": "Intermediate",
     "rating": 4.9
   }
 ]

@@ -4,6 +4,9 @@ import "./index.css";
 import Navbar from "./Components/Navbar";
 import Technology from "./Components/Technology/Technology";
 import type { ITechnology } from "./Type/types";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Footer from "./Components/Footer";
 
 const technologyPromise = async (): Promise<ITechnology[]> => {
   const res = await fetch("/public/data.json");
@@ -18,11 +21,13 @@ function App() {
     <>
       <Navbar />
       <Hero />
+      <Footer />
       <Suspense
         fallback={<p className="text-center text-gray-500 py-4">What's up? </p>}
       >
         <Technology technologyPromise={technologyPromise()} />
       </Suspense>
+      <ToastContainer />
     </>
   );
 }

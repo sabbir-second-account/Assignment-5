@@ -2,6 +2,7 @@ import React, { use, useState } from "react";
 import type { ITechnology } from "../../Type/types";
 import AvailableTechnology from "./AvailableTechnology";
 import { MdDelete } from "react-icons/md";
+import { toast } from "react-toastify";
 
 interface TechnologyProps {
   technologyPromise: Promise<ITechnology[]>;
@@ -14,7 +15,15 @@ const Technology = ({ technologyPromise }: TechnologyProps) => {
   console.log(stack);
 
   const addToStack = (item: ITechnology) => {
+    const alreadyExists = stack.some((tech) => tech.id === item.id);
+
+    if (alreadyExists) {
+      return;
+    }
+
     setStack((previous) => [...previous, item]);
+
+    toast.success(`${item.name} added to your stack!`);
   };
 
   /////// Remove from the Stack
@@ -24,6 +33,12 @@ const Technology = ({ technologyPromise }: TechnologyProps) => {
   };
 
   /////// Remove from the Stack
+
+  // Remove ALL function
+
+  const removeAll = () => {
+    setStack([]);
+  };
 
   return (
     <section className="max-w-7xl w-full mx-auto px-4 my-16">
@@ -41,7 +56,11 @@ const Technology = ({ technologyPromise }: TechnologyProps) => {
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
         {/* Tech Cards Container (Takes 3 Columns) */}
         <div className="lg:col-span-3">
-          <AvailableTechnology technology={technology} onAdd={addToStack} />
+          <AvailableTechnology
+            technology={technology}
+            onAdd={addToStack}
+            stack={stack}
+          />
         </div>
 
         {/* Sticky Sidebar (Takes 1 Column) */}
@@ -62,52 +81,45 @@ const Technology = ({ technologyPromise }: TechnologyProps) => {
               Your stack is empty.
             </div>
           ) : (
-            <div className="space-y-3">
-              {stack.map((tech) => (
-                <div
-                  key={tech.id}
-                  className="flex items-center justify-between p-3 bg-slate-50  border border-slate-200/80 rounded-xl "
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-white p-1 border border-slate-200 flex items-center justify-center shrink-0">
-                      <img
-                        className="w-full h-full object-contain"
-                        src={tech.img}
-                        alt={tech.name}
-                      />
-                    </div>
-                    <p className="text-sm font-semibold text-slate-800">
-                      {tech.name}
-                    </p>
-                  </div>
-
-                  <button
-                    onClick={() => removeFromStack(tech.id)}
-                    className="p-1.5 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors"
+            <div>
+              <div className="space-y-3">
+                {stack.map((tech) => (
+                  <div
+                    key={tech.id}
+                    className="flex items-center justify-between p-3 bg-slate-50  border border-slate-200/80 rounded-xl "
                   >
-                    <MdDelete className="text-lg" />
-                  </button>
-                </div>
-              ))}
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-lg bg-white p-1 border border-slate-200 flex items-center justify-center shrink-0">
+                        <img
+                          className="w-full h-full object-contain"
+                          src={tech.img}
+                          alt={tech.name}
+                        />
+                      </div>
+                      <p className="text-sm font-semibold text-slate-800">
+                        {tech.name}
+                      </p>
+                    </div>
+
+                    <button
+                      onClick={() => removeFromStack(tech.id)}
+                      className="p-1.5 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors"
+                    >
+                      <MdDelete className="text-lg" />
+                    </button>
+                  </div>
+                ))}
+              </div>
+              {stack.length > 1 && (
+                <button
+                  onClick={removeAll}
+                  className="w-full mt-6 py-2 rounded-lg border border-red-200 text-red-500"
+                >
+                  Remove All
+                </button>
+              )}
             </div>
-
-            // <div className="space-y-3">
-            //     {
-            //       stack.map((tech) => (
-            //         <div key={tech.id}>
-            //           <img className="w-[28px] h-[28px] object-cover" src={tech.img} alt="" />
-            //           <p>{tech.name}</p>
-            //           <button onClick={() => removeFromStack(tech.id)}>
-            //             <MdDelete />
-
-            //           </button>
-            //         </div>
-            //       ))
-            //     }
-            // </div>
           )}
-
-          {/* Actual code... */}
         </aside>
       </div>
     </section>

@@ -5,21 +5,28 @@ import TechnologyCard from "./TechnologyCard";
 interface IAvailableTechnologyProps {
   technology: ITechnology[];
   onAdd: (tech: ITechnology) => void;
+  stack: ITechnology[];
 }
 
 const AvailableTechnology = ({
   technology,
+  stack,
   onAdd,
 }: IAvailableTechnologyProps) => {
   // console.log(technology, "technology from AvailableTechnology");
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
       {technology.map((tech: ITechnology) => {
-        return <TechnologyCard 
-        key={tech.id} 
-        tech={tech} 
-        onAdd={onAdd} 
-        />;
+        const isAdded = stack.some((item) => item.id === tech.id);
+
+        return (
+          <TechnologyCard
+            key={tech.id}
+            tech={tech}
+            onAdd={onAdd}
+            isAdded={isAdded}
+          />
+        );
       })}
     </div>
   );

@@ -12,6 +12,6 @@ export interface ITechnology {
   img: string;
   badge: string;
   category: string;
-  level: string;
+  difficulty: string;
   rating: number;
 }
