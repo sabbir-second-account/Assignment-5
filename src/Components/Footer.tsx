@@ -1,4 +1,3 @@
-
 const Footer = () => {
   return (
     <footer className="w-full bg-white text-slate-600 border-t border-gray-100 font-sans">
@@ -9,8 +8,8 @@ const Footer = () => {
           <div className="md:col-span-6 space-y-4 pr-0 md:pr-12">
             {/* Logo */}
             <div className="flex items-center space-x-2">
-
-                <img src="/public/logo-text.png" alt="" />
+              {/* <img src="/public/logo-text.png"  /> */}
+              <img src="/logo-text.png" alt="DevStack Logo" />
               {/* <div className="bg-pink-600 text-white font-bold text-xs rounded px-2 py-1 flex items-center justify-center">
                 DS
               </div>
