@@ -12,7 +12,6 @@ const Technology = ({ technologyPromise }: TechnologyProps) => {
   const technology = use(technologyPromise);
 
   const [stack, setStack] = useState<ITechnology[]>([]);
-  console.log(stack);
 
   const addToStack = (item: ITechnology) => {
     const alreadyExists = stack.some((tech) => tech.id === item.id);

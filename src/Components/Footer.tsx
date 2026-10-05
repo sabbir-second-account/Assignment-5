@@ -9,12 +9,14 @@ const Footer = () => {
           <div className="md:col-span-6 space-y-4 pr-0 md:pr-12">
             {/* Logo */}
             <div className="flex items-center space-x-2">
-              <div className="bg-pink-600 text-white font-bold text-xs rounded px-2 py-1 flex items-center justify-center">
+
+                <img src="/public/logo-text.png" alt="" />
+              {/* <div className="bg-pink-600 text-white font-bold text-xs rounded px-2 py-1 flex items-center justify-center">
                 DS
               </div>
               <span className="text-xl font-bold tracking-tight text-slate-900">
                 Dev<span className="text-pink-600">Stack</span>
-              </span>
+              </span> */}
             </div>
 
             {/* Description */}

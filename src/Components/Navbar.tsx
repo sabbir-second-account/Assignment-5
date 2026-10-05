@@ -12,7 +12,7 @@ const navItems: INavItem[] = [
 const Navbar = () => {
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-zinc-100">
-      <div className="relative flex justify-between items-center max-w-7xl w-full mx-auto h-[60px] py-4 px-3 sm:px-4">
+      <div className="relative flex justify-between items-center max-w-7xl w-full mx-auto h-15 py-4 px-3 sm:px-4">
         {/* Mobile Menu Button */}
         <button className="md:hidden text-xl sm:text-2xl z-10 shrink-0">
           <RxHamburgerMenu />
