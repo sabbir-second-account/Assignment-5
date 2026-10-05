@@ -1,5 +1,5 @@
 import type { ITechnology } from "../../Type/types";
-import { FaStar } from "react-icons/fa";
+import { FaStar, FaCheck } from "react-icons/fa"; // 1. Import FaCheck
 
 const TechnologyCard = ({
   tech,
@@ -53,7 +53,6 @@ const TechnologyCard = ({
           </div>
         </div>
 
-        
         <button
           onClick={() => onAdd(tech)}
           disabled={isAdded}
@@ -63,10 +62,15 @@ const TechnologyCard = ({
               : "bg-[#0F172A] hover:bg-slate-800 text-white"
           }`}
         >
-          {isAdded ? "Added to Stack" : "Add to Stack"}
+          {isAdded ? (
+            <span className="flex items-center justify-center gap-2">
+              <FaCheck />
+              Added to Stack
+            </span>
+          ) : (
+            "Add to Stack"
+          )}
         </button>
-        
-        
       </div>
     </div>
   );
