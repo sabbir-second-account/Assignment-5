@@ -26,13 +26,13 @@ function App() {
     <>
       <Navbar />
       <Hero />
-      <Footer />
       <Suspense
         fallback={<p className="text-center text-gray-500 py-4">What's up? </p>}
       >
         <Technology technologyPromise={technologyPromise } />
       </Suspense>
       <ToastContainer />
+      <Footer />
     </>
   );
 }

@@ -113,7 +113,7 @@ const Technology = ({ technologyPromise }: TechnologyProps) => {
               {stack.length > 1 && (
                 <button
                   onClick={removeAll}
-                  className="w-full mt-6 py-2 rounded-lg border border-red-200 text-red-500"
+                  className="w-full mt-6 py-2 rounded-lg border border-red-200 text-red-500 "
                 >
                   Remove All
                 </button>
